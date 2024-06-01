@@ -230,6 +230,7 @@ if (window.location.pathname.endsWith(`/Welcome.html`)) {
 
 if (window.location.pathname.endsWith(`/Welcome.html`)) {
   if (!localStorage.getItem("currentUser")) {
+    window.location.reload(true);
     caches.delete(`/Welcome.html`).then(() => {
       window.location.href = "index.html";
     });
