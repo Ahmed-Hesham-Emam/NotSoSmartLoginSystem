@@ -92,8 +92,10 @@ function signUp() {
 function login() {
   for (var i = 0; i < dataBase.length; i++) {
     if (
-      loginEmail.value.toLowerCase() === dataBase[i].Email.toLowerCase() &&
-      loginPassword.value === dataBase[i].Password
+      dataBase[i].Email.toLowerCase().includes(
+        loginEmail.value.toLowerCase()
+      ) &&
+      dataBase[i].Password.includes(loginPassword.value)
     ) {
       passCheck.classList.replace("d-block", "d-none");
       logCheck.classList.replace("d-block", "d-none");
@@ -111,7 +113,9 @@ function login() {
       passCheck.classList.replace("d-block", "d-none");
       EmailCheck.classList.replace("d-block", "d-none");
     } else if (
-      loginEmail.value.toLowerCase() == dataBase[i].Email.toLowerCase() &&
+      dataBase[i].Email.toLowerCase().includes(
+        loginEmail.value.toLowerCase()
+      ) &&
       !dataBase[i].Password.includes(loginPassword.value)
     ) {
       passCheck.classList.replace("d-none", "d-block");
