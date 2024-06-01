@@ -21,6 +21,7 @@ var emailCheck = document.getElementById("emailCheck");
 var emptyCheck = document.getElementById("emptyCheck");
 var logoutBtn = document.getElementById("logout");
 var closeEmailCheckBtn = document.getElementById("closeEmailCheck");
+var EmailCheck = document.getElementById("EmailCheck");
 
 // Regex
 var nameRegex = /^[a-zA-Z]{3,}$/;
@@ -101,19 +102,31 @@ function login() {
       localStorage.setItem("currentUser", dataBase[i].Name);
       window.location.href = "Welcome.html";
     } else if (
-      !dataBase[i].Email.toLowerCase().includes(loginEmail.value.toLowerCase())
+      !dataBase[i].Email.toLowerCase().includes(
+        loginEmail.value.toLowerCase()
+      ) &&
+      !dataBase[i].Password.includes(loginPassword.value)
     ) {
       passCheck.classList.replace("d-block", "d-none");
       logCheck.classList.replace("d-none", "d-block");
+      EmailCheck.classList.replace("d-block", "d-none");
+    } else if (
+      !dataBase[i].Email.toLowerCase().includes(loginEmail.value.toLowerCase())
+    ) {
+      EmailCheck.classList.replace("d-none", "d-block");
+      passCheck.classList.replace("d-block", "d-none");
+      logCheck.classList.replace("d-block", "d-none");
     } else if (
       loginEmail.value.toLowerCase() == dataBase[i].Email.toLowerCase() &&
       !dataBase[i].Password.includes(loginPassword.value)
     ) {
       passCheck.classList.replace("d-none", "d-block");
+      EmailCheck.classList.replace("d-block", "d-none");
       logCheck.classList.replace("d-block", "d-none");
     } else if (loginEmail.value === "" || loginPassword.value === "") {
       passCheck.classList.replace("d-block", "d-none");
       logCheck.classList.replace("d-block", "d-none");
+      EmailCheck.classList.replace("d-block", "d-none");
     }
   }
 }
@@ -211,7 +224,7 @@ if (window.location.pathname.endsWith(`/Welcome.html`)) {
   logoutBtn.addEventListener("click", logout);
 }
 
-if (window.location.pathname.endsWith("/Welcome.html")) {
+if (window.location.pathname.endsWith(`/Welcome.html`)) {
   if (!localStorage.getItem("currentUser")) {
     window.location.reload();
     window.location.href = "index.html";
