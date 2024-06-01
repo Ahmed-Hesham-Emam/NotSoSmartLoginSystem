@@ -102,6 +102,12 @@ function login() {
       localStorage.setItem("currentUser", dataBase[i].Name);
       window.location.href = "Welcome.html";
     } else if (
+      !dataBase[i].Email.toLowerCase().includes(loginEmail.value.toLowerCase())
+    ) {
+      EmailCheck.classList.replace("d-none", "d-block");
+      passCheck.classList.replace("d-block", "d-none");
+      logCheck.classList.replace("d-block", "d-none");
+    } else if (
       !dataBase[i].Email.toLowerCase().includes(
         loginEmail.value.toLowerCase()
       ) &&
@@ -110,12 +116,6 @@ function login() {
       passCheck.classList.replace("d-block", "d-none");
       logCheck.classList.replace("d-none", "d-block");
       EmailCheck.classList.replace("d-block", "d-none");
-    } else if (
-      !dataBase[i].Email.toLowerCase().includes(loginEmail.value.toLowerCase())
-    ) {
-      EmailCheck.classList.replace("d-none", "d-block");
-      passCheck.classList.replace("d-block", "d-none");
-      logCheck.classList.replace("d-block", "d-none");
     } else if (
       loginEmail.value.toLowerCase() == dataBase[i].Email.toLowerCase() &&
       !dataBase[i].Password.includes(loginPassword.value)
@@ -226,8 +226,10 @@ if (window.location.pathname.endsWith(`/Welcome.html`)) {
 
 if (window.location.pathname.endsWith(`/Welcome.html`)) {
   if (!localStorage.getItem("currentUser")) {
-    window.location.reload();
-    window.location.href = "index.html";
+    caches.delete(`/Welcome.html`);
+    // .then(() => {
+    //   window.location.href = "index.html";
+    // });
   }
 }
 
