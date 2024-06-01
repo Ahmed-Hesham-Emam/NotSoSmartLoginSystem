@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <title>Sign Up</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="CSS/all.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/style.css" />
+  </head>
+  <body id="signUpKeyPress">
+    <main class="container text-center my-5">
+      <div
+        id="emailCheck"
+        class="floating h-75 w-75 d-none flex-column align-items-center justify-content-center shadow-lg"
+      >
+        <h2 class="text-white text-center">
+          You're already registered with this Email !
+        </h2>
+        <div class="mt-5">
+          <a role="button" class="btn btn-danger m-3" id="closeEmailCheck"
+            >Close</a
+          >
+          <a role="button" class="btn btn-info m-3" href="index.html">Login</a>
+        </div>
+      </div>
+
+      <div class="content m-auto w-75 p-5">
+        <h1>Smart Login System</h1>
+        <div class="row pt-3">
+          <div class="col-12">
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control py-2"
+                id="userName"
+                placeholder="Enter your Name"
+              />
+              <p
+                id="warnName"
+                class="alert alert-danger py-1 mt-1 text-start d-none"
+              >
+                *The name must be at least 3 charcters
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="mb-3">
+              <input
+                type="email"
+                class="form-control py-2"
+                id="signEmail"
+                placeholder="Enter your Email"
+              />
+              <p
+                id="warnEmail"
+                class="alert alert-danger py-1 mt-1 text-start d-none"
+              >
+                *Must be a valid email i.e,."example@example.com
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="mb-3">
+              <input
+                type="password"
+                class="form-control py-2"
+                id="signPassword"
+                placeholder="Enter your Password"
+              />
+              <p
+                id="warnPassword"
+                class="alert alert-danger py-1 mt-1 text-start d-none"
+              >
+                The password must contain at least
+                <br />
+                <span>* 1 Uppercase charcter </span>
+                <br />
+                <span>* 1 Lowercase charcter </span>
+                <br />
+                <span>* 1 Digit </span>
+                <br />
+                <span>* 1 Special charcter i.e,. "!@#$%^&*"</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p id="emptyCheck" class="text-danger d-none">
+          Inputs can not be empty
+        </p>
+
+        <button id="SignUp" class="btn btn-outline-info mt-3 py-2 w-100">
+          Sign Up
+        </button>
+
+        <p class="text-white mt-2">
+          You have an account?
+          <a
+            class="link-light link-underline-opacity-100-hover link-underline-opacity-0"
+            href="index.html"
+            >Sign In</a
+          >
+        </p>
+      </div>
+    </main>
+    <!-- JS -->
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/index.js"></script>
+  </body>
+</html>

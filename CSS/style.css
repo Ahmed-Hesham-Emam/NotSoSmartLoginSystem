@@ -1,0 +1,68 @@
+/* main ¯\_(ツ)_/¯ */
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: sans-serif;
+  color: #17a2b8;
+}
+
+::selection {
+  background: #17a2b8;
+  color: #24353f;
+  -webkit-text-fill-color: #24353f;
+  -moz-text-fill-color: #24353f;
+  -ms-text-fill-color: #24353f;
+  -o-text-fill-color: #24353f;
+}
+
+body {
+  background-color: #24353f;
+}
+
+::placeholder,
+::-webkit-input-placeholder {
+  color: gray !important;
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
+
+.btn-login:focus,
+.btn-login:active {
+  box-shadow: 0 0 0 0.3rem rgba(23, 162, 184, 0.5);
+}
+
+input {
+  color: white !important;
+  background-color: transparent !important;
+}
+
+.content {
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 1);
+}
+
+@media (max-width: 991px) {
+  .btn-outline-warning {
+    margin-top: 3%;
+    width: 100%;
+  }
+}
+
+
+
+.floating{
+  position: fixed;
+  bottom: 20%;
+  right: 14%;
+  z-index: 1000;
+  background-color: #24353f;
+}

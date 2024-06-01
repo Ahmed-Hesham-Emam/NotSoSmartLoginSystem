@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <title>Login</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="CSS/all.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/style.css" />
+  </head>
+  <body id="loginKeyPress">
+    <main class="container text-center my-5">
+      <div class="content m-auto w-75 p-5">
+        <h1>Smart Login System</h1>
+        <div class="row pt-3">
+          <div class="col-12">
+            <div class="mb-3">
+              <input
+                type="email"
+                class="form-control py-2"
+                id="logEmail"
+                placeholder="Email"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="mb-3">
+              <input
+                type="password"
+                class="form-control py-2"
+                id="logPassword"
+                placeholder="Password"
+              />
+            </div>
+          </div>
+        </div>
+        <p id="passCheck" class="text-danger d-none">Invalid Password</p>
+        <p id="logCheck" class="text-danger d-none">Invalid input</p>
+        <button id="login" class="btn btn-outline-info mt-3 py-2 w-100">
+          Login
+        </button>
+
+        <p class="text-white mt-2">
+          Don't have an account?
+          <a
+            class="link-light link-underline-opacity-100-hover link-underline-opacity-0"
+            href="SignUp.html"
+            >Sign Up</a
+          >
+        </p>
+      </div>
+    </main>
+    <!-- JS -->
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/index.js"></script>
+  </body>
+</html>
