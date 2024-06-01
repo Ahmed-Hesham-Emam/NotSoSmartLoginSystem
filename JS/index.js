@@ -123,7 +123,7 @@ function login() {
       EmailCheck.classList.replace("d-none", "d-block");
       passCheck.classList.replace("d-block", "d-none");
       logCheck.classList.replace("d-block", "d-none");
-    } else if (loginEmail.value === "" || loginPassword.value === "") {
+    } else if (loginEmail.value === "" && loginPassword.value === "") {
       passCheck.classList.replace("d-block", "d-none");
       logCheck.classList.replace("d-block", "d-none");
       EmailCheck.classList.replace("d-block", "d-none");
