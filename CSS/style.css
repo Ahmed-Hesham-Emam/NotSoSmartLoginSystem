@@ -13,20 +13,20 @@ h4,
 h5,
 h6 {
   font-family: sans-serif;
-  color: #17a2b8;
+  color: #467061;
 }
 
 ::selection {
-  background: #17a2b8;
-  color: #24353f;
-  -webkit-text-fill-color: #24353f;
-  -moz-text-fill-color: #24353f;
-  -ms-text-fill-color: #24353f;
-  -o-text-fill-color: #24353f;
+  background: #467061;
+  color: #003e29;
+  -webkit-text-fill-color: #003e29;
+  -moz-text-fill-color: #003e29;
+  -ms-text-fill-color: #003e29;
+  -o-text-fill-color: #003e29;
 }
 
 body {
-  background-color: #24353f;
+  background-color: #003e29;
 }
 
 ::placeholder,
@@ -57,12 +57,10 @@ input {
   }
 }
 
-
-
-.floating{
+.floating {
   position: fixed;
   bottom: 20%;
   right: 14%;
   z-index: 1000;
-  background-color: #24353f;
+  background-color: #003e29;
 }
