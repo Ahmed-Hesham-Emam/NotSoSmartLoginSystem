@@ -92,10 +92,8 @@ function signUp() {
 function login() {
   for (var i = 0; i < dataBase.length; i++) {
     if (
-      dataBase[i].Email.toLowerCase().includes(
-        loginEmail.value.toLowerCase()
-      ) &&
-      dataBase[i].Password.includes(loginPassword.value)
+      dataBase[i].Email.toLowerCase() === loginEmail.value.toLowerCase() &&
+      dataBase[i].Password === loginPassword.value
     ) {
       passCheck.classList.replace("d-block", "d-none");
       logCheck.classList.replace("d-block", "d-none");
@@ -104,25 +102,21 @@ function login() {
       localStorage.setItem("currentUser", dataBase[i].Name);
       window.location.href = "Welcome.html";
     } else if (
-      !dataBase[i].Email.toLowerCase().includes(
-        loginEmail.value.toLowerCase()
-      ) &&
-      !dataBase[i].Password.includes(loginPassword.value)
+      !dataBase[i].Email.toLowerCase() === loginEmail.value.toLowerCase() &&
+      !dataBase[i].Password === loginPassword.value
     ) {
       logCheck.classList.replace("d-none", "d-block");
       passCheck.classList.replace("d-block", "d-none");
       EmailCheck.classList.replace("d-block", "d-none");
     } else if (
-      dataBase[i].Email.toLowerCase().includes(
-        loginEmail.value.toLowerCase()
-      ) &&
-      !dataBase[i].Password.includes(loginPassword.value)
+      dataBase[i].Email.toLowerCase() === loginEmail.value.toLowerCase() &&
+      !dataBase[i].Password === loginPassword.value
     ) {
       passCheck.classList.replace("d-none", "d-block");
       EmailCheck.classList.replace("d-block", "d-none");
       logCheck.classList.replace("d-block", "d-none");
     } else if (
-      !dataBase[i].Email.toLowerCase().includes(loginEmail.value.toLowerCase())
+      !dataBase[i].Email.toLowerCase() === loginEmail.value.toLowerCase()
     ) {
       EmailCheck.classList.replace("d-none", "d-block");
       passCheck.classList.replace("d-block", "d-none");
