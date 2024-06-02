@@ -13,7 +13,7 @@ h4,
 h5,
 h6 {
   font-family: sans-serif;
-  color: #467061;
+  color: black !important;
 }
 
 ::selection {
@@ -26,7 +26,7 @@ h6 {
 }
 
 body {
-  background-color: #003e29;
+  background-color: #98FB98;
 }
 
 ::placeholder,
@@ -62,5 +62,5 @@ input {
   bottom: 20%;
   right: 14%;
   z-index: 1000;
-  background-color: #003e29;
+  background-color: #98FB98;
 }
