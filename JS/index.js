@@ -96,6 +96,7 @@ function login() {
       dataBase[i].Email.toLowerCase() === loginEmail.value.toLowerCase() &&
       dataBase[i].Password === loginPassword.value
     ) {
+      EmailCheck.classList.replace("d-block", "d-none");
       passCheck.classList.replace("d-block", "d-none");
       logCheck.classList.replace("d-block", "d-none");
       MTCheck.classList.replace("d-block", "d-none");
@@ -103,6 +104,7 @@ function login() {
       loginPassword.value = "";
       localStorage.setItem("currentUser", dataBase[i].Name);
       window.location.href = "Welcome.html";
+      return;
     } else if (
       !dataBase[i].Email.toLowerCase().includes(
         loginEmail.value.toLowerCase()
@@ -113,6 +115,7 @@ function login() {
       passCheck.classList.replace("d-block", "d-none");
       EmailCheck.classList.replace("d-block", "d-none");
       MTCheck.classList.replace("d-block", "d-none");
+      return;
     } else if (
       dataBase[i].Email.toLowerCase().includes(
         loginEmail.value.toLowerCase()
@@ -123,6 +126,7 @@ function login() {
       EmailCheck.classList.replace("d-block", "d-none");
       logCheck.classList.replace("d-block", "d-none");
       MTCheck.classList.replace("d-block", "d-none");
+      return;
     } else if (
       !dataBase[i].Email.toLowerCase().includes(loginEmail.value.toLowerCase())
     ) {
@@ -130,11 +134,13 @@ function login() {
       passCheck.classList.replace("d-block", "d-none");
       logCheck.classList.replace("d-block", "d-none");
       MTCheck.classList.replace("d-block", "d-none");
+      return;
     } else if (loginEmail.value === "" && loginPassword.value === "") {
       passCheck.classList.replace("d-block", "d-none");
       logCheck.classList.replace("d-block", "d-none");
       EmailCheck.classList.replace("d-block", "d-none");
       MTCheck.classList.replace("d-none", "d-block");
+      return;
     }
   }
 }
