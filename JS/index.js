@@ -22,6 +22,7 @@ var emptyCheck = document.getElementById("emptyCheck");
 var logoutBtn = document.getElementById("logout");
 var closeEmailCheckBtn = document.getElementById("closeEmailCheck");
 var EmailCheck = document.getElementById("EmailCheck");
+var MTCheck = document.getElementById("MTCheck");
 
 // Regex
 var nameRegex = /^[a-zA-Z]{3,}$/;
@@ -97,6 +98,7 @@ function login() {
     ) {
       passCheck.classList.replace("d-block", "d-none");
       logCheck.classList.replace("d-block", "d-none");
+      MTCheck.classList.replace("d-block", "d-none");
       loginEmail.value = "";
       loginPassword.value = "";
       localStorage.setItem("currentUser", dataBase[i].Name);
@@ -110,6 +112,7 @@ function login() {
       logCheck.classList.replace("d-none", "d-block");
       passCheck.classList.replace("d-block", "d-none");
       EmailCheck.classList.replace("d-block", "d-none");
+      MTCheck.classList.replace("d-block", "d-none");
     } else if (
       dataBase[i].Email.toLowerCase().includes(
         loginEmail.value.toLowerCase()
@@ -119,16 +122,19 @@ function login() {
       passCheck.classList.replace("d-none", "d-block");
       EmailCheck.classList.replace("d-block", "d-none");
       logCheck.classList.replace("d-block", "d-none");
+      MTCheck.classList.replace("d-block", "d-none");
     } else if (
       !dataBase[i].Email.toLowerCase().includes(loginEmail.value.toLowerCase())
     ) {
       EmailCheck.classList.replace("d-none", "d-block");
       passCheck.classList.replace("d-block", "d-none");
       logCheck.classList.replace("d-block", "d-none");
+      MTCheck.classList.replace("d-block", "d-none");
     } else if (loginEmail.value === "" && loginPassword.value === "") {
       passCheck.classList.replace("d-block", "d-none");
       logCheck.classList.replace("d-block", "d-none");
       EmailCheck.classList.replace("d-block", "d-none");
+      MTCheck.classList.replace("d-none", "d-block");
     }
   }
 }
