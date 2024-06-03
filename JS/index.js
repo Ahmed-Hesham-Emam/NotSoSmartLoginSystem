@@ -93,7 +93,6 @@ function signUp() {
 function login() {
   if (localStorage.getItem("logins") === null) {
     logCheck.classList.replace("d-none", "d-block");
-    return;
   }
 
   for (var i = 0; i < dataBase.length; i++) {
@@ -244,7 +243,7 @@ if (window.location.pathname.endsWith(`/Welcome.html`)) {
 }
 
 if (window.location.pathname.endsWith(`/Welcome.html`)) {
-  if (localStorage.getItem("currentUser") === null) {
+  if (!localStorage.getItem("currentUser")) {
     window.location.reload(true);
     caches.delete(`/Welcome.html`).then(() => {
       window.location.href = "index.html";
