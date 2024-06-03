@@ -243,15 +243,11 @@ if (window.location.pathname.endsWith(`/Welcome.html`)) {
   logoutBtn.addEventListener("click", logout);
 }
 
-// if (window.location.pathname.endsWith(`/Welcome.html`)) {
-//   if (localStorage.getItem("currentUser") === null) {
-//     // window.location.reload(true);
-//     // caches.delete(`/Welcome.html`).then(() => {
-//     //   window.location.href = "index.html";
-//     // });
-//     window.location.href = "index.html";
-//   }
-// }
+if (window.location.pathname.endsWith(`/Welcome.html`)) {
+  if (localStorage.getItem("currentUser") === null) {
+    window.location.href = "index.html";
+  }
+}
 
 //close modal
 function closeEmailCheck() {
