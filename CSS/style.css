@@ -47,7 +47,9 @@ input {
   color: #98fb98 !important;
   background-color: transparent !important;
 }
-
+input:focus {
+  border-color: #98fb98 !important;
+}
 .content {
   box-shadow: 0 0 3rem rgb(39, 39, 39);
 }
